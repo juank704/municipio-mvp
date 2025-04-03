@@ -3,4 +3,4 @@ services:
     build: .
     ports:
       - "8069:8069"
-    command: ["odoo", "-c", "/etc/odoo/odoo.conf", "-d", "odoo_db", "-i", "base"]
+    command: ["odoo", "-c", "/etc/odoo/odoo.conf", "-d", "odoo_db", "-i", "base", "--log-level=debug"]
