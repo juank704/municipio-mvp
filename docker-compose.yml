@@ -5,5 +5,4 @@ services:
     build: .
     ports:
       - "8069:8069"
-    environment:
-      - DATABASE_URL=postgres://postgres:NvJyEvYMctLHafIAfmENdzicrryxUxxf@postgres.railway.internal:5432/railway
+    command: ["odoo", "-c", "/etc/odoo/odoo.conf"]

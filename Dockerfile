@@ -15,5 +15,8 @@ COPY ./odoo /usr/lib/python3/dist-packages/odoo
 # Copia los módulos personalizados
 COPY ./addons /mnt/extra-addons
 
+# Copia el archivo de configuración
+COPY ./odoo.conf /etc/odoo/odoo.conf
+
 # (Opcional) Instala requerimientos adicionales
 # RUN pip install -r /usr/lib/python3/dist-packages/odoo/requirements.txt
