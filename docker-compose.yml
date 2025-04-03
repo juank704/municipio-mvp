@@ -6,7 +6,8 @@ services:
     ports:
       - "8069:8069"
     environment:
-      - HOST=postgres.railway.internal
-      - USER=postgres
-      - PASSWORD=NvJyEvYMctLHafIAfmENdzicrryxUxxf
-      - POSTGRES_DB=railway
+      - DB_HOST=postgres.railway.internal
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=NvJyEvYMctLHafIAfmENdzicrryxUxxf
+      - DB_NAME=railway
