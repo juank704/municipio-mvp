@@ -1,8 +1,6 @@
-version: '3.1'
-
 services:
   web:
     build: .
     ports:
       - "8069:8069"
-    command: ["odoo", "-c", "/etc/odoo/odoo.conf"]
+    command: ["odoo", "-c", "/etc/odoo/odoo.conf", "-d", "odoo_db", "-i", "base"]
