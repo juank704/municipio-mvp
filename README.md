@@ -13,7 +13,7 @@ Este proyecto es un MVP construido con **Odoo 17 Community Edition**, pensado pa
 
 Haz clic en el botón para desplegar este proyecto directamente en Railway:
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/TU_USUARIO/municipio-mvp)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/juank704/municipio-mvp)
 
 > ⚠️ Reemplaza `TU_USUARIO` con tu usuario real de GitHub en la URL si vas a compartir este botón.
 
