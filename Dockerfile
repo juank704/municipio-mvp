@@ -1,6 +1,6 @@
 FROM odoo:17.0
 
-ARG LOCALE=en_US.UTF-8
+ARG LOCALE=es_CL.UTF-8
 ENV LANGUAGE=${LOCALE}
 ENV LC_ALL=${LOCALE}
 ENV LANG=${LOCALE}
@@ -10,18 +10,20 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends locales netc
     && locale-gen ${LOCALE} \
     && apt-get clean
 
-# Copiar código local
+# Copiar código local y configuraciones
 COPY ./addons /mnt/extra-addons
 COPY ./entrypoint.sh /app/entrypoint.sh
-COPY ./odoo.conf /etc/odoo/odoo.conf
 COPY requirements.txt /tmp/requirements.txt
+
+# Dar permisos de ejecución al entrypoint
+RUN chmod +x /app/entrypoint.sh
 
 # Instalar dependencias Python si hay
 RUN pip3 install -r /tmp/requirements.txt || true
 
 WORKDIR /app
 
-HEALTHCHECK CMD curl --fail http://localhost:${PORT}/web/login || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:8069/web/login || exit 1
 
-ENTRYPOINT ["/bin/sh"]
-CMD ["entrypoint.sh"]
+# Usar script como entrypoint
+ENTRYPOINT ["/app/entrypoint.sh"]
