@@ -7,7 +7,7 @@
     'data': [],
     'assets': {
         'web.assets_backend': [
-            'custom_user_menu/static/src/xml/user_menu_override.xml',
+            '/custom_user_menu/static/src/xml/user_menu_override.xml',
         ],
     },
     'installable': True,
