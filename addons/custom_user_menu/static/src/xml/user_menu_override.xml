@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <template id="custom_user_menu" inherit_id="web.webclient_user_menu" name="Custom User Menu">
-    <xpath expr="//t[@t-if='widget.showDocumentation']" position="replace">
-      <!-- Puedes dejar esto vacío para ocultarlo, o agregar contenido personalizado -->
+    <xpath expr="//t[@t-if='widget.showDocumentation']" position="attributes">
+      <attribute name="t-if">False</attribute>
     </xpath>
-    <xpath expr="//t[@t-if='widget.showSupport']" position="replace">
-      <!-- Aquí también puedes agregar lo que quieras -->
+    <xpath expr="//t[@t-if='widget.showSupport']" position="attributes">
+      <attribute name="t-if">False</attribute>
     </xpath>
-    <xpath expr="//t[@t-if='widget.showAccount']" position="replace">
-      <!-- Ídem -->
+    <xpath expr="//t[@t-if='widget.showAccount']" position="attributes">
+      <attribute name="t-if">False</attribute>
     </xpath>
   </template>
 </odoo>
