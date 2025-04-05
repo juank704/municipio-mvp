@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<template id="custom_user_menu" inherit_id="web.webclient_user_menu" name="Custom User Menu">
-  <xpath expr="//t[@t-if='widget.showDocumentation']" position="replace"/>
-  <xpath expr="//t[@t-if='widget.showSupport']" position="replace"/>
-  <xpath expr="//t[@t-if='widget.showAccount']" position="replace"/>
-</template>
+<odoo>
+  <template id="custom_user_menu" inherit_id="web.webclient_user_menu" name="Custom User Menu">
+    <xpath expr="//t[@t-if='widget.showDocumentation']" position="replace">
+      <!-- Puedes dejar esto vacío para ocultarlo, o agregar contenido personalizado -->
+    </xpath>
+    <xpath expr="//t[@t-if='widget.showSupport']" position="replace">
+      <!-- Aquí también puedes agregar lo que quieras -->
+    </xpath>
+    <xpath expr="//t[@t-if='widget.showAccount']" position="replace">
+      <!-- Ídem -->
+    </xpath>
+  </template>
+</odoo>

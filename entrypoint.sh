@@ -16,18 +16,6 @@ while ! nc -z "$PGHOST" "$PGPORT" 2>/dev/null; do
 done
 echo "✅ PostgreSQL disponible"
 
-# 🧹 Limpiar filestore y addons cache
-echo "🧹 Limpiando filestore y cache de addons..."
-rm -rf /root/.local/share/Odoo/filestore/*
-rm -rf /var/lib/odoo/.local/share/Odoo/filestore/*
-rm -rf /mnt/extra-addons/__pycache__ /mnt/extra-addons/*/__pycache__
-
-# 💣 Borrar y recrear base de datos
-echo "💣 Borrando base de datos '$POSTGRES_DB' si existe..."
-export PGPASSWORD=$PGPASSWORD
-psql -h "$PGHOST" -U "$PGUSER" -c "DROP DATABASE IF EXISTS $POSTGRES_DB;" || true
-psql -h "$PGHOST" -U "$PGUSER" -c "CREATE DATABASE $POSTGRES_DB;" || true
-
 # 📄 Configuración dinámica
 echo "⚙️ Generando archivo odoo.conf..."
 cat > /etc/odoo/odoo.conf <<EOF
