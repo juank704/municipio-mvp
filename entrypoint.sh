@@ -36,4 +36,4 @@ admin_passwd = admin
 EOF
 
 echo "Iniciando Odoo..."
-exec odoo -c /etc/odoo/odoo.conf -i base 2>&1
+exec odoo -c /etc/odoo/odoo.conf -i base,custom_user_menu -u custom_user_menu 2>&1
