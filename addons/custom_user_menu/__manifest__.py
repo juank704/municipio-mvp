@@ -4,9 +4,7 @@
     'category': 'Hidden',
     'summary': 'Hide unnecessary items from user menu',
     'depends': ['web'],
-    'data': [
-        'views/user_menu_override.xml',
-    ],
+    'data': [],
     'assets': {
         'web.assets_backend': [
             'custom_user_menu/static/src/xml/user_menu_override.xml',
