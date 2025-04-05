@@ -2,6 +2,7 @@
 set -e
 
 # Mostrar las variables que vamos a usar (debug)
+echo "Mensaje" >&1
 echo "Variables de conexión:"
 echo "  Host:     ${PGHOST:-<no definido>}"
 echo "  Puerto:   ${PGPORT:-<no definido>}"
