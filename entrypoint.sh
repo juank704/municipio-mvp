@@ -40,8 +40,8 @@ echo "Instalando módulos personalizados..."
 odoo -c /etc/odoo/odoo.conf -i base,custom_user_menu -u custom_user_menu
 
 # Limpieza opcional: solo si estás seguro que puedes perder archivos adjuntos
-echo "Limpiando filestore (cuidado en producción)..."
-rm -rf /var/lib/odoo/.local/share/Odoo/filestore/*
+#echo "Limpiando filestore (cuidado en producción)..."
+#rm -rf /var/lib/odoo/.local/share/Odoo/filestore/*
 
 echo "Iniciando servidor Odoo..."
 exec odoo -c /etc/odoo/odoo.conf
