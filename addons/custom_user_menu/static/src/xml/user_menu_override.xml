@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <template id="custom_user_menu_remove_items" inherit_id="web.UserMenu" name="Remove User Menu Items">
-        <!-- Eliminar Documentación -->
-        <xpath expr="//t[@t-if='widget.showDocumentation']" position="replace"/>
-        <!-- Eliminar Soporte -->
-        <xpath expr="//t[@t-if='widget.showSupport']" position="replace"/>
-        <!-- Eliminar Atajos -->
-        <xpath expr="//t[@t-if='widget.showShortcut']" position="replace"/>
-        <!-- Eliminar Mi cuenta de Odoo -->
-        <xpath expr="//a[contains(@href, 'odoo.com')]" position="replace"/>
-    </template>
-</odoo>
+<templates xml:space="preserve">
+  <t t-inherit="web.UserMenu" t-inherit-mode="extension">
+    <!-- Ocultar Documentación -->
+    <xpath expr="//t[@t-if='widget.showDocumentation']" position="replace"/>
+    <!-- Ocultar Soporte -->
+    <xpath expr="//t[@t-if='widget.showSupport']" position="replace"/>
+    <!-- Ocultar Atajos -->
+    <xpath expr="//t[@t-if='widget.showShortcut']" position="replace"/>
+    <!-- Ocultar Cuenta Odoo -->
+    <xpath expr="//a[contains(@href, 'odoo.com')]" position="replace"/>
+  </t>
+</templates>
