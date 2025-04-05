@@ -37,7 +37,9 @@ admin_passwd = admin
 EOF
 
 echo "Instalando módulos personalizados..."
-odoo -c /etc/odoo/odoo.conf -i base,custom_user_menu -u custom_user_menu
+#odoo -c /etc/odoo/odoo.conf -i base,custom_user_menu -u custom_user_menu
+odoo -c /etc/odoo/odoo.conf --dev=all -u custom_user_menu
+
 
 # Limpieza opcional: solo si estás seguro que puedes perder archivos adjuntos
 #echo "Limpiando filestore (cuidado en producción)..."
