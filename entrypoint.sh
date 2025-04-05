@@ -2,7 +2,6 @@
 set -e
 
 # Mostrar las variables que vamos a usar (debug)
-echo "Mensaje" >&1
 echo "Variables de conexión:"
 echo "  Host:     ${PGHOST:-<no definido>}"
 echo "  Puerto:   ${PGPORT:-<no definido>}"
@@ -36,13 +35,5 @@ addons_path = /mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons
 admin_passwd = admin
 EOF
 
-echo "Instalando módulos personalizados..."
-#odoo -c /etc/odoo/odoo.conf -i base,custom_user_menu -u custom_user_menu
-odoo -c /etc/odoo/odoo.conf -u base,custom_user_menu --dev=all --log-level=info
-
-# Limpieza opcional: solo si estás seguro que puedes perder archivos adjuntos
-#echo "Limpiando filestore (cuidado en producción)..."
-#rm -rf /var/lib/odoo/.local/share/Odoo/filestore/*
-
-echo "Iniciando servidor Odoo..."
-exec odoo -c /etc/odoo/odoo.conf
+echo "Iniciando Odoo..."
+exec odoo -c /etc/odoo/odoo.conf -i base 2>&1
