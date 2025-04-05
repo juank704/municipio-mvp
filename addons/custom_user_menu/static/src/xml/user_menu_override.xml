@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <template id="custom_user_menu" inherit_id="web.webclient_user_menu" name="Custom User Menu">
-    <xpath expr="//t[@t-if='widget.showDocumentation']" position="attributes">
-      <attribute name="t-if">False</attribute>
-    </xpath>
-    <xpath expr="//t[@t-if='widget.showSupport']" position="attributes">
-      <attribute name="t-if">False</attribute>
-    </xpath>
-    <xpath expr="//t[@t-if='widget.showAccount']" position="attributes">
-      <attribute name="t-if">False</attribute>
-    </xpath>
+  <template xml:space="preserve">
+    <t t-name="custom_user_menu" t-inherit="web.webclient_user_menu" t-inherit-mode="extension">
+      <xpath expr="//t[@t-if='widget.showDocumentation']" position="attributes">
+        <attribute name="t-if">False</attribute>
+      </xpath>
+      <xpath expr="//t[@t-if='widget.showSupport']" position="attributes">
+        <attribute name="t-if">False</attribute>
+      </xpath>
+      <xpath expr="//t[@t-if='widget.showAccount']" position="attributes">
+        <attribute name="t-if">False</attribute>
+      </xpath>
+    </t>
   </template>
 </odoo>
